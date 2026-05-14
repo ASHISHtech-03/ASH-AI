@@ -1,0 +1,6 @@
+{
+  "name": "AshAI",
+  "description": "Premium AI Document Assistant powered by ROBYY. Upload documents and chat using advanced neural synthesis and AI voice.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}

@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profile data stored on first login.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "isPremium": { "type": "boolean" },
+        "uploadCount": { "type": "number" },
+        "chatCount": { "type": "number" },
+        "lastRefillTime": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "feedback": {
+      "title": "Feedback",
+      "description": "User ratings and experience feedback.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "rating"]
+    },
+    "conversations": {
+      "title": "Conversation",
+      "description": "Chat history logs.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "fileName": { "type": "string" },
+        "messages": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "users",
+      "description": "Store user profiles."
+    },
+    "feedback/{feedbackId}": {
+      "schema": "feedback",
+      "description": "Store user feedback."
+    },
+    "conversations/{conversationId}": {
+      "schema": "conversations",
+      "description": "Store chat history."
+    }
+  }
+}

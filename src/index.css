@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold-50: #FFFDF0;
+  --color-gold-100: #FEF9C3;
+  --color-gold-200: #FEF08A;
+  --color-gold-300: #FDE047;
+  --color-gold-400: #FACC15;
+  --color-gold-500: #EAB308;
+  --color-gold-600: #CA8A04;
+  --color-gold-700: #A16207;
+  --color-gold-800: #854D0E;
+  --color-gold-900: #713F12;
+  --color-gold-950: #422006;
+  --color-premium-gold: #D4AF37;
+  --color-premium-dark: #0A0A0A;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-white text-[#1A1A1A];
+  }
+}
+
+/* Custom Markdown Styles */
+.prose {
+  @apply text-[17px] leading-relaxed font-medium;
+}
+
+.prose-premium {
+  @apply text-inherit;
+}
+
+.prose-premium-dark {
+  @apply text-white/90;
+}
+
+.prose p {
+  @apply mb-6 last:mb-0;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  @apply font-black italic tracking-tighter mt-10 mb-4 first:mt-0 uppercase;
+}
+
+.prose-premium h1, .prose-premium h2, .prose-premium h3 {
+  @apply text-gold-500;
+}
+
+.prose h1 { @apply text-3xl; }
+.prose h2 { @apply text-2xl; }
+.prose h3 { @apply text-xl; }
+
+.prose ul, .prose ol {
+  @apply mb-6 pl-8 space-y-2;
+}
+
+.prose ul {
+  @apply list-disc marker:text-gold-500;
+}
+
+.prose ol {
+  @apply list-decimal marker:text-gold-500;
+}
+
+.prose blockquote {
+  @apply border-l-[12px] border-gold-500/20 bg-gold-50/50 pl-8 py-4 italic text-gray-700 mb-6 rounded-r-3xl;
+}
+
+.prose-premium blockquote {
+  @apply bg-white/5 text-white/70 border-gold-500/40;
+}
+
+.prose code {
+  @apply bg-gray-100 px-2 py-0.5 rounded-lg text-gold-700 font-mono text-sm font-bold;
+}
+
+.prose-premium code {
+  @apply bg-white/10 text-gold-400;
+}
+
+.prose pre {
+  @apply bg-[#1A1A1A] text-gray-100 p-8 rounded-[32px] overflow-x-auto mb-6 font-mono text-sm border border-white/5;
+}
+
+.prose strong {
+  @apply font-black text-gray-900 italic;
+}
+
+.prose-premium strong {
+  @apply text-white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 border-[3px] border-solid border-transparent bg-clip-padding rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold-200;
+}
+
+.bg-premium {
+  background: radial-gradient(circle at top right, #D4AF3744 0%, transparent 50%),
+              radial-gradient(circle at bottom left, #1A1A1A 0%, transparent 50%),
+              #0A0A0A;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #A16207 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #A16207 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
